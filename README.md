@@ -19,9 +19,7 @@ As rotas são feitas seguindo o padrão RESTful.
 - Os Assets (JSON prontos para testar a API) se encontram na pasta: <a href="https://github.com/CaioLr/api-michelin-restaurants/tree/main/api-app/resources/jsons">/api-app/resources/jsons/</a>
 - As Migrations para o BD se encontram na pasta: <a href="https://github.com/CaioLr/api-michelin-restaurants/tree/main/api-app/database/migrations">/api-app/database/migrations/</a>
 
-## Documentação
-Para utilizar os endpoints siga a documentação no Swagger abaixo:
-Swagger: 
+
 
 ## Instalação
 Obs: Necessita do PHP e Composer(https://getcomposer.org) instalados e um banco de dados MySQL.
@@ -56,3 +54,10 @@ Caso não esteja no seu BD:
     $ php artisan jwt:secret
 ### Aplicação instalada, para iniciar o servidor pode utilizar:
     $ php artisan serve
+
+## Documentação
+Para utilizar os endpoints siga a documentação no Swagger abaixo:
+    $ php artisan l5-swagger:generate
+Depois entrar pela url: http://127.0.0.1:8000/api/documentation
+#### Obs: Existem JSONs prontos para testar a API na pasta:
+<a href="https://github.com/CaioLr/api-michelin-restaurants/tree/main/api-app/resources/jsons">/api-app/resources/jsons/</a> 
