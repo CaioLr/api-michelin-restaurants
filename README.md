@@ -27,7 +27,7 @@ Swagger:
 Obs: Necessita do PHP e Composer(https://getcomposer.org) instalados e um banco de dados MySQL.
 
 ### Clone o repositório
-    $ git clone https://github.com/CaioLr/myToDo-project.git
+    $ git clone https://github.com/CaioLr/api-michelin-restaurants.git
 ### Acesse a pasta do projeto (api-app)
     $ cd api-michelin-restaurants/api-app 
 ### Instale as dependências
