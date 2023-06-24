@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+Route::post('auth/login', 'App\Http\Controllers\AuthController@login');
+
 Route::group(['middleware' => ['apiJwt']],function(){
     Route::post('auth/logout', 'App\Http\Controllers\AuthController@logout');
 
@@ -23,4 +25,3 @@ Route::group(['middleware' => ['apiJwt']],function(){
 });
 
 
-Route::post('auth/login', 'App\Http\Controllers\AuthController@login');

@@ -7,11 +7,37 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+
     /**
     * Get a JWT via given credentials.
     *
     * @return \Illuminate\Http\JsonResponse
     */
+
+        /**
+     * @OA\Get(
+     *      path="/api/auth/login",
+     *      operationId="login",
+     *      tags={"Authetication"},
+     *      description="A partir do email e senha fornecidos no body, retorna um token para authentificação.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
+     */
    public function login(Request $req)
    {
        $credentials = $req->only(['email', 'password']);
@@ -27,6 +53,31 @@ class AuthController extends Controller
      * Log the user out (Invalidate the token).
      *
      * @return \Illuminate\Http\JsonResponse
+     */
+
+          /**
+     * @OA\Get(
+     *      path="/api/auth/logout",
+     *      operationId="logout",
+     *      tags={"Authetication"},
+     *      description="A partir do token fornecido na requisição desloga o usuário.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
      */
     public function logout()
     {

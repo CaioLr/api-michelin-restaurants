@@ -8,6 +8,30 @@ use App\Models\Restaurant;
 
 class RestaurantController extends Controller
 {
+     /**
+     * @OA\Get(
+     *      path="/api/restaurants",
+     *      operationId="find_all",
+     *      tags={"CRUD"},
+     *      description="Busca todos os registros. É necessário o token de autentificação.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
+     */
     public function index(){
         try {
             $response = Restaurant::get();
@@ -16,7 +40,30 @@ class RestaurantController extends Controller
         }
         return $response;
     }
-
+    /**
+     * @OA\Get(
+     *      path="/api/restaurants/find",
+     *      operationId="find",
+     *      tags={"CRUD"},
+     *      description="Busca 1 ou mais resgistros específicos. É necessário o token de autentificação.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
+     */
     public function find(Request $req){
 
         try {
@@ -40,6 +87,30 @@ class RestaurantController extends Controller
 
     }
 
+    /**
+     * @OA\Post(
+     *      path="/api/restaurants",
+     *      operationId="store",
+     *      tags={"CRUD"},
+     *      description="Adiciona 1 ou mais registros no banco de dados. É necessário o token de autentificação.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
+     */
     public function store(Request $req){
         try {
 
@@ -64,7 +135,30 @@ class RestaurantController extends Controller
         
         return "Registro(s) inseridos com sucesso!";
     }
-
+    /**
+     * @OA\Delete(
+     *      path="/api/restaurants",
+     *      operationId="delete",
+     *      tags={"CRUD"},
+     *      description="Deleta 1 ou mais resgistros específicos. É necessário o token de autentificação.",
+     *      @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent()
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="Successful operation"
+     *       ),
+     *      @OA\Response(
+     *          response=400,
+     *          description="Bad Request"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      )
+     * )
+     */
     public function delete(Request $req){
 
         try {
